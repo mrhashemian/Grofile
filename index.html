@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grofile</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="git_profile_request.js" defer></script>
+    <!-- todo: add meta tags -->
+<!--    <script src="https://kit.fontawesome.com/c03b6a20bf.js" crossorigin="anonymous"></script>-->
+</head>
+<body>
+<div class="content">
+    <div id="profile" class="profile-box">
+        <div id="message">
+            Please enter a github username to see its information
+        </div>
+        <div id="profile-information">
+            <div id="d1">
+                <div id="d11">
+                    <img src="assets/images/octocat.png" class="hoverZoomLink" alt="profile picture">
+                </div>
+                <div id="d12">
+                    <h1 id="name"></h1>
+                    <h1 id="blog"></h1>
+                    <h1 id="location"></h1>
+                    <h1 id="company"></h1>
+                </div>
+            </div>
+            <div id="d2">
+                <div id="d21">
+                    <h1 id="id"></h1>
+                    <h1 id="login"></h1>
+                    <h1 id="email"></h1>
+                    <h1 id="created_at"></h1>
+                    <h1 id="updated_at"></h1>
+                    <h1 id="followers"></h1>
+                    <h1 id="following"></h1>
+                </div>
+            </div>
+            <div class="profile-bio">
+                <p id="bio"></p>
+                <a id="html_url" target="_blank" href="https://github.com/"></a>
+            </div>
+        </div>
+    </div>
+    <div class="request-box">
+        <form>
+            <label class="icon" for="username"><i class="fa fa-user"></i>username</label>
+            <input type="text" name="username" id="username" placeholder="mrhashemian" min="3" required/>
+            <div id="submit">Submit</div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
