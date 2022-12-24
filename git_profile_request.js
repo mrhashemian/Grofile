@@ -4,6 +4,7 @@ const requestOptions = {
 };
 const date_options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
 
+// add event listener for submit button
 document.getElementById("submit").addEventListener("click", function () {
     let userName = document.getElementById("username").value
     document.getElementById("box-message").innerHTML = ""
@@ -23,9 +24,9 @@ document.getElementById("submit").addEventListener("click", function () {
     }
 })
 
+// get user skills. first check local storage then request if it doesn't exist
 function getUserLanguage(userName) {
     let languageCache = localStorage.getItem("language:" + userName)
-    console.log("language cache", languageCache)
     if (languageCache !== null) {
         document.getElementById("box-message").innerHTML += "<br>this skills got from local storage"
         languageCache = JSON.parse(languageCache)
@@ -40,6 +41,7 @@ function getUserLanguage(userName) {
     }
 }
 
+// find user most 3 top programming languages and save them to localStorage
 function mostLanguages(array, userName) {
     let languages = new Map();
     for (let i = 0; i < array.length; i++) {
@@ -68,6 +70,7 @@ function mostLanguages(array, userName) {
     }
 }
 
+// fetch user repositories and loop over at most 5 of them to find their languages.
 function findUserLanguages(userName) {
     const newResult = [];
 
@@ -99,6 +102,7 @@ function findUserLanguages(userName) {
         });
 }
 
+// function to show message in profile box
 function showMessage(error) {
     let messageElement = document.getElementById("message")
     messageElement.innerHTML = error
@@ -106,6 +110,7 @@ function showMessage(error) {
     document.getElementById("profile-information").style.opacity = "0"
 }
 
+// fetch user GitHub profile and save it to localStorage
 function getGitProfile(userName) {
     fetch(`https://api.github.com/users/${userName}`, requestOptions)
         .then((response) => {
@@ -126,6 +131,7 @@ function getGitProfile(userName) {
         });
 }
 
+// use for clear elements values
 function prepareProfileCard() {
     document.getElementById("message").style.opacity = "0"
     document.getElementById("profile-information").style.opacity = "1"
@@ -144,6 +150,7 @@ function prepareProfileCard() {
     }
 }
 
+// append profile values to html elements
 function renderGitProfile(profile) {
     prepareProfileCard()
 
