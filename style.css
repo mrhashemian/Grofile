@@ -1,4 +1,11 @@
 /*-------------- General --------------*/
+@font-face {
+    font-family: 'youtube sans';
+    src: url('/assets/fonts/youtube-sans-bold.ttf') format('truetype'),
+    url('/assets/fonts/youtube-sans-medium.ttf') format('truetype'),
+    url('/assets/fonts/youtube-sans-light.ttf') format('truetype');
+}
+
 html {
     width: 100%;
     height: 100%;
@@ -49,7 +56,6 @@ body:before {
     -webkit-animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
     animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
 }
-
 
 
 /*-------------- Content --------------*/
