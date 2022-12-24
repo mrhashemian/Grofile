@@ -98,6 +98,12 @@ body:before {
     animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
 }
 
+#box-message {
+    padding: 24px;
+    font-size: 20px;
+    color: #FF5722;
+}
+
 .content {
     background: #FFB300;
     width: 256px;
@@ -160,9 +166,20 @@ body:before {
     text-align: center;
     -webkit-animation: moveIn 1s 3.1s ease forwards;
     animation: moveIn 1s 3.1s ease forwards;
+}
+
+#profile-information {
     display: flex;
     flex-direction: column;
 }
+
+#d2 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    line-height: 24px;
+}
+
 
 .content .profile-box #d1 {
     display: flex;
