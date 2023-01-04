@@ -1,4 +1,11 @@
-/*-------------- General --------------*/
+/*
+-------------- General --------------
+This includes general items and main tags.
+such as HTML, body, paragraph and heading tags.
+The font is defined and, for example, the background is defined for the body.
+Also, the :before selector of the body is related to the initial animation of gray background fading out.
+-webkit prefix  used to avoid browser compatibility issues in safari and chrome.
+*/
 @font-face {
     font-family: 'youtube sans';
     src: url('/assets/fonts/youtube-sans-bold.ttf') format('truetype'),
@@ -36,7 +43,6 @@ body {
     width: 100%;
     height: 100%;
     font: normal 14px/1.618em "Roboto", sans-serif;
-    -webkit-font-smoothing: antialiased;
 }
 
 body:before {
@@ -59,6 +65,9 @@ body:before {
 
 
 /*-------------- Content --------------*/
+/* this is for main box
+animation is for circle area that move up-down and back
+*/
 .content {
     background: #FFB300;
     width: 256px;
@@ -82,10 +91,10 @@ body:before {
     animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
 }
 
+/* left box for profile-information and message box, and right box for request box */
 .content #profile, .content .request-box {
     align-self: center;
     height: auto;
-
 }
 
 .content #profile {
@@ -101,6 +110,9 @@ body:before {
     animation: moveIn 1s 3.1s ease forwards;
 }
 
+/* this is for box, with absolute position that cover the left box.
+it uses for showing first message and error messages.
+ */
 #message {
     position: absolute;
     width: 100%;
@@ -112,24 +124,29 @@ body:before {
     opacity: 1;
 }
 
+/* this section includes all profile information */
 #profile-information {
     opacity: 0;
     display: flex;
     flex-direction: column;
 }
 
-
+/* profile information section, consist of 3 rows. d1, d2, profile-bio.
+d1 itself has 2 column. profile image in left side and some information like name on right.
+ */
 .content #profile #d1 {
     display: flex;
     justify-content: start;
     align-items: center;
 }
 
+/* right column of row 1 */
 .content #profile #d12 {
     padding-left: 20px;
     text-align: left;
 }
 
+/* row 2 */
 .content #profile #d2 {
     text-align: left;
     padding: 14px;
@@ -147,6 +164,7 @@ body:before {
     color: #FF5722;
 }
 
+/* some properties for profile image. such size, shadow, radius, etc. */
 .content #profile img {
     width: 120px;
     max-width: 100%;
@@ -165,6 +183,7 @@ body:before {
     box-shadow: 0 0 0 12px rgba(0, 0, 0, 0.1);
 }
 
+/* the last row of profile information section. consist of bio text and GitHub link */
 .content #profile .profile-bio {
     width: auto;
     height: auto;
@@ -185,7 +204,6 @@ body:before {
     line-height: 25px;
 }
 
-
 #followers, #following {
     display: inline;
     margin: 4px 20px 2px 0;
@@ -203,6 +221,7 @@ body:before {
     animation: moveIn 1s 3.1s ease forwards;
 }
 
+/* label of input */
 .content .request-box form label {
     font-size: 18px;
     margin: 10px 0;
@@ -234,6 +253,7 @@ body:before {
     transition: 0.3s;
 }
 
+/* this box message is for showing cache message. when data come from localstorage */
 #box-message {
     padding: 24px;
     font-size: 20px;
@@ -241,6 +261,11 @@ body:before {
     position: absolute;
 }
 
+/*
+The lower parts are the definition of animations.
+which specify a series of features in different stages of completion.
+for example, how should the height and width be at 0% and then increase at 50% and so on...
+ */
 @-webkit-keyframes init {
     0% {
         width: 0;
